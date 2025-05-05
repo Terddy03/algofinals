@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Online Voting System - Algorithm Analysis Presentation</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Slide 1: Title -->
+<div class="slide active">
+  <h1>Online Voting System</h1>
+  <h2>Algorithm Analysis & Implementation</h2>
+  <p>By: Terd Imogen Inocentes</p>
+  <p class="subtitle">A Real-Time Voting System with Advanced Sorting and Searching Algorithms</p>
+</div>
+
+<!-- Slide 2: Scenario Summary -->
+<div class="slide">
+  <h2>Project Overview</h2>
+  <div class="content-box">
+    <p>
+      This presentation demonstrates the implementation of an efficient online voting system
+      that handles real-time updates while maintaining optimal performance through:
+    </p>
+    <ul>
+      <li>🚀 Real-time vote processing</li>
+      <li>📊 Dynamic result sorting</li>
+      <li>🔍 Instant candidate search</li>
+      <li>⚡ Optimized algorithms for speed</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Slide 3: Dataset Characteristics -->
+<div class="slide">
+  <h2>System Requirements</h2>
+  <div class="content-box">
+    <h3>Key Features</h3>
+    <ul>
+      <li>📦 Handle large numbers of candidates efficiently</li>
+      <li>🔄 Process votes in real-time</li>
+      <li>📝 Maintain candidate information (Name, ID, Votes)</li>
+      <li>🔍 Quick search functionality</li>
+      <li>📊 Automatic vote-based ranking</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Slide 4: Algorithm Analysis -->
+<div class="slide">
+  <h2>Algorithm Selection</h2>
+  <div class="content-box">
+    <h3>Quick Sort for Vote Ranking</h3>
+    <ul>
+      <li>⚡ Average Time Complexity: O(n log n)</li>
+      <li>🧠 Space Efficiency: In-place sorting</li>
+      <li>💫 Perfect for dynamic updates</li>
+    </ul>
+
+    <h3>Binary Search for Candidate Lookup</h3>
+    <ul>
+      <li>🔍 Time Complexity: O(log n)</li>
+      <li>⚡ Instant results for users</li>
+      <li>📈 Scales well with data size</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Slide 5: Live Demo -->
+<div class="slide">
+  <h2>Interactive Demo</h2>
+  <div class="demo-container">
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Search candidates by name or ID...">
+    </div>
+    
+    <div class="voting-controls">
+      <select id="candidateSelect"></select>
+      <button onclick="handleVote()">Cast Vote</button>
+    </div>
+
+    <div class="results-container">
+      <h3>Live Results</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Candidate</th>
+            <th>ID</th>
+            <th>Votes</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Slide 6: Algorithm Comparison -->
+<div class="slide">
+  <h2>Algorithm Performance Analysis</h2>
+  <div class="content-box">
+    <div class="algorithm-comparison">
+      <div class="comparison-visual">
+        <h3>Sorting Algorithm Comparison</h3>
+        <h4>Quick Sort vs Merge Sort</h4>
+        <table class="comparison-table">
+          <tr>
+            <th>Dataset Size</th>
+            <th>Quick Sort</th>
+            <th>Merge Sort</th>
+          </tr>
+          <tr>
+            <td>100 items</td>
+            <td class="highlight-better">~600 steps<br><small>In-place</small></td>
+            <td class="highlight-worse">~700 steps<br><small>Extra Space: 100 items</small></td>
+          </tr>
+          <tr>
+            <td>1000 items</td>
+            <td class="highlight-better">~9,000 steps<br><small>In-place</small></td>
+            <td class="highlight-worse">~10,000 steps<br><small>Extra Space: 1000 items</small></td>
+          </tr>
+        </table>
+
+        <h4>Why Not Merge Sort?</h4>
+        <ul>
+          <li>🧠 Requires O(n) extra space - Memory intensive for large datasets</li>
+          <li>🔄 Not in-place - Creates temporary arrays during sorting</li>
+          <li>⚡ Similar time complexity O(n log n) but with space overhead</li>
+          <li>❗ Less efficient for real-time voting where memory is crucial</li>
+        </ul>
+      </div>
+
+      <div class="comparison-visual">
+        <h3>Search Algorithm Comparison</h3>
+        <h4>Binary Search vs Linear Search</h4>
+        <table class="comparison-table">
+          <tr>
+            <th>Dataset Size</th>
+            <th>Binary Search</th>
+            <th>Linear Search</th>
+          </tr>
+          <tr>
+            <td>100 items</td>
+            <td class="highlight-better">~7 steps</td>
+            <td class="highlight-worse">~50 steps</td>
+          </tr>
+          <tr>
+            <td>1000 items</td>
+            <td class="highlight-better">~10 steps</td>
+            <td class="highlight-worse">~500 steps</td>
+          </tr>
+        </table>
+
+        <h4>Why Not Linear Search?</h4>
+        <ul>
+          <li>🐢 Time Complexity: O(n) - Must check every element</li>
+          <li>📉 Inefficient for large candidate lists</li>
+          <li>⚠️ Search time increases linearly with data size</li>
+          <li>🚫 Not optimal for frequent search operations</li>
+        </ul>
+      </div>
+
+      <div class="final-note">
+        <h3>Conclusion</h3>
+        <p>While both Quick Sort and Merge Sort achieve O(n log n) time complexity, Quick Sort's in-place sorting makes it more memory-efficient for our real-time voting system. Combined with Binary Search's O(log n) lookup time, these algorithms provide the optimal balance of speed and resource efficiency, especially crucial in a dynamic voting environment where memory usage matters.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Slide 5: Live Demo -->
+<div class="slide">
+  <h2>Interactive Demo</h2>
+  <div class="demo-container">
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Search candidates by name or ID...">
+    </div>
+    
+    <div class="voting-controls">
+      <select id="candidateSelect"></select>
+      <button onclick="handleVote()">Cast Vote</button>
+    </div>
+
+    <div class="results-container">
+      <h3>Live Results</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Candidate</th>
+            <th>ID</th>
+            <th>Votes</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Navigation -->
+<div class="navigation">
+  <button id="prevBtn" onclick="previousSlide()">Previous</button>
+  <button id="nextBtn" onclick="nextSlide()">Next</button>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
